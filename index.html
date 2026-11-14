@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b13">
+  <meta name="description" content="A little romantic call surprise.">
+  <title>Incoming Call ♥</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone" id="phone">
+    <section class="screen incoming active" id="incomingScreen" aria-label="Incoming call">
+      <div class="ambient-glow"></div>
+      <div class="top-status"><span>● ● ●</span><span id="clock">Now</span><span>◖)))</span></div>
+      <div class="incoming-content">
+        <div class="eyebrow">Incoming call</div>
+        <div class="avatar-wrap">
+          <img id="callerPhoto" class="caller-photo" src="assets/caller.jpg" alt="Caller photo"
+               onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='grid'">
+          <div id="avatarFallback" class="avatar-fallback">♡</div>
+          <span class="pulse-ring"></span>
+        </div>
+        <h1>My Love <span>🫶🏻</span></h1>
+        <p class="call-subtitle">is calling…</p>
+        <p class="tease" id="tease" aria-live="polite">Someone can't wait to hear your voice.</p>
+      </div>
+      <div class="call-actions">
+        <div class="action">
+          <button class="call-button decline" id="declineBtn" aria-label="Decline call">
+            <span class="phone-icon">✕</span>
+          </button>
+          <span>Decline</span>
+        </div>
+        <div class="action accept-action" id="acceptAction">
+          <button class="call-button accept" id="acceptBtn" aria-label="Answer call">
+            <span class="phone-icon">☎</span>
+          </button>
+          <span>Answer</span>
+        </div>
+      </div>
+      <div class="bottom-hint"></div>
+    </section>
+
+    <section class="screen connected" id="connectedScreen" aria-label="Call in progress">
+      <div class="couple-backdrop" id="coupleBackdrop"></div>
+      <div class="connected-shade"></div>
+      <div class="top-status light"><span>● ● ●</span><span id="connectedClock">Now</span><span>◖)))</span></div>
+      <div class="connected-content">
+        <div class="call-label">Voice call</div>
+        <div class="mini-avatar-wrap">
+          <img id="miniPhoto" src="assets/caller.jpg" alt="Caller"
+               onerror="this.style.display='none';document.getElementById('miniFallback').style.display='grid'">
+          <div id="miniFallback" class="mini-fallback">♡</div>
+        </div>
+        <h2>My Love <span>♥</span></h2>
+        <div class="call-timer" id="callTimer">00:00</div>
+        <div class="voice-bars" id="voiceBars" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <p class="listening-text" id="listeningText"></p>
+      </div>
+      <div class="connected-controls">
+        <button class="end-call" id="endBtn" aria-label="End call"><span>☎</span></button>
+        <span>End call</span>
+      </div>
+      <audio id="voiceAudio" preload="auto">
+        <source src="assets/voice.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
